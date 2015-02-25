@@ -17,14 +17,14 @@ namespace EFUniversity
         [STAThread]
         static void Main()
         {
-            UniversityContext db = new UniversityContext();
+            /*UniversityContext db = new UniversityContext();
             var group = new Group { Name = "101" };
             db.Groups.Add(group);
-            db.SaveChanges(); 
+            db.SaveChanges(); */
 
-            /*Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());*/
+            Application.Run(new Form1());
         }
     }
 }

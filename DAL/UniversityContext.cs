@@ -13,12 +13,11 @@ namespace DAL
         public DbSet<Group> Groups { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
-        public DbSet<GroupToSubject> GoupsToSubjects { get; set; }
+        public DbSet<GroupToSubject> GroupsToSubjects { get; set; }
 
         public UniversityContext()
-            : base("name=EFUniversity")
+            : base("EFUniversity")
         {
-
         }
     }
 }

@@ -18,6 +18,16 @@ namespace DBModel
         public int GroupId { get; set; }
 
         [ForeignKey("GroupId")]
-        public virtual Group Group { get; set; }
+        protected virtual Group Group { get; set; }
+
+        public Student() { }
+
+        public Student(string name, string surname, int age, int groupId)
+        {
+            FirstName = name;
+            LastName = surname;
+            Age = age;
+            GroupId = groupId;
+        }
     }
 }
