@@ -13,5 +13,6 @@ namespace DBModel
         public int Id { get; set; }
         public string Name { get; set; }
 
+
     }
 }
