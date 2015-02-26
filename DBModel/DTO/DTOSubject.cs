@@ -8,5 +8,7 @@ namespace DBModel.DTO
 {
     class DTOSubject
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
