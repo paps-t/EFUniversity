@@ -151,10 +151,6 @@ namespace EFUniversity
             Width = 870;
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnStudCreate_Click(object sender, EventArgs e)
         {
             int age;
@@ -202,20 +198,55 @@ namespace EFUniversity
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*int row = dataGridView1.CurrentRow.Index;
+            int row = dataGridView1.CurrentRow.Index;
+            if (grBoxStudent.Visible)
+            {
             txtUpdName.Text = dataGridView1.Rows[row].Cells[1].Value.ToString();
             txtUpdSurname.Text = dataGridView1.Rows[row].Cells[2].Value.ToString();
             txtUpdAge.Text = dataGridView1.Rows[row].Cells[3].Value.ToString();
             int grId = Int32.Parse(dataGridView1.Rows[row].Cells[4].Value.ToString());
-            var ttt = context.Groups.ToList();
-            comboUpdGroupId.DataSource = ttt;
+            var groups = context.Groups.ToList();
+            comboUpdGroupId.DataSource = groups;
             var current = (from s in context.Groups where s.Id == grId select s).FirstOrDefault();
             if (current != null)
             {
                 comboUpdGroupId.SelectedItem = comboUpdGroupId.Items[comboUpdGroupId.Items.IndexOf(current)];
             }
             comboUpdGroupId.DisplayMember = "Name";
-            comboUpdGroupId.ValueMember = "Id";*/
+            comboUpdGroupId.ValueMember = "Id";
+             }
+            else if (grBoxGroup.Visible) 
+            {
+                txtUpdGroupName.Text = dataGridView1.Rows[row].Cells[0].Value.ToString();
+            }
+            else if (grBoxSubject.Visible) 
+            {
+                txtUpdSubjName.Text = dataGridView1.Rows[row].Cells[1].Value.ToString();
+            }/*
+            else if (grBoxGTS.Visible) 
+            {
+                int grId = Int32.Parse(dataGridView1.Rows[row].Cells[0].Value.ToString());
+                var groups = context.Groups.ToList();
+                comboGTSUpdGroup.DataSource = groups;
+                var curGr = (from s in context.Groups where s.Id == grId select s).FirstOrDefault();
+                if (curGr != null)
+                {
+                    comboGTSUpdGroup.SelectedItem = comboGTSUpdGroup.Items[comboGTSUpdGroup.Items.IndexOf(curGr)];
+                }
+                comboGTSUpdGroup.DisplayMember = "Name";
+                comboGTSUpdGroup.ValueMember = "Id";
+                int subjId = Int32.Parse(dataGridView1.Rows[row].Cells[1].Value.ToString());
+                var subjects = context.Groups.ToList();
+                comboUpdGroupId.DataSource = groups;
+                var curSubj = (from s in context.Subjects where s.Id == grId select s).FirstOrDefault();
+                if (curSubj != null)
+                {
+                    comboGTSUpdSubj.SelectedItem = comboGTSUpdSubj.Items[comboGTSUpdSubj.Items.IndexOf(curSubj)];
+                }
+                comboGTSUpdSubj.DisplayMember = "Name";
+                comboGTSUpdSubj.ValueMember = "Id";
+            }*/
+            
         }
 
         private void btnGroupCreate_Click(object sender, EventArgs e)
@@ -305,17 +336,22 @@ namespace EFUniversity
         }
 
         private void btnGTSUpdate_Click(object sender, EventArgs e)
-        {
+        {/*
             int row = dataGridView1.CurrentRow.Index;
             int grId = Int32.Parse(dataGridView1.Rows[row].Cells[0].Value.ToString());
             int subId = Int32.Parse(dataGridView1.Rows[row].Cells[1].Value.ToString());
 
             GroupToSubject current = context.GroupsToSubjects.FirstOrDefault(gts => gts.GroupId == grId && gts.SubjectId == subId);
+            if (current != null)
+            {
+                context.GroupsToSubjects.Remove(current);                
+            }
             current.GroupId = Int32.Parse(comboGTSUpdGroup.SelectedValue.ToString());
             current.SubjectId = Int32.Parse(comboGTSUpdSubj.SelectedValue.ToString());
             try
             {
-                context.Entry(current).State = System.Data.Entity.EntityState.Modified;
+                context.GroupsToSubjects.Add(current);
+                //context.Entry(current).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }
             catch(Exception)
@@ -323,7 +359,7 @@ namespace EFUniversity
                 //MessageBox.Show("Row already exsists!");
             }
             btnGroupToSubject.PerformClick();
-
+            */
         }
 
         private void btnGTSDelete_Click(object sender, EventArgs e)

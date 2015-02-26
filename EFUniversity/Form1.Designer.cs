@@ -76,6 +76,10 @@
             this.lblSubjName = new System.Windows.Forms.Label();
             this.txtSubj = new System.Windows.Forms.TextBox();
             this.grBoxGTS = new System.Windows.Forms.GroupBox();
+            this.comboGTSUpdSubj = new System.Windows.Forms.ComboBox();
+            this.lblGTSUpdSubj = new System.Windows.Forms.Label();
+            this.comboGTSSubj = new System.Windows.Forms.ComboBox();
+            this.lblGTSSubj = new System.Windows.Forms.Label();
             this.btnGTSUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboGTSUpdGroup = new System.Windows.Forms.ComboBox();
@@ -85,10 +89,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboGTSGroup = new System.Windows.Forms.ComboBox();
             this.lblGTSGroup = new System.Windows.Forms.Label();
-            this.comboGTSSubj = new System.Windows.Forms.ComboBox();
-            this.lblGTSSubj = new System.Windows.Forms.Label();
-            this.comboGTSUpdSubj = new System.Windows.Forms.ComboBox();
-            this.lblGTSUpdSubj = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grBoxStudent.SuspendLayout();
             this.grBoxGroup.SuspendLayout();
@@ -170,7 +170,7 @@
             this.grBoxStudent.Controls.Add(this.txtName);
             this.grBoxStudent.Location = new System.Drawing.Point(844, 12);
             this.grBoxStudent.Name = "grBoxStudent";
-            this.grBoxStudent.Size = new System.Drawing.Size(271, 388);
+            this.grBoxStudent.Size = new System.Drawing.Size(271, 392);
             this.grBoxStudent.TabIndex = 9;
             this.grBoxStudent.TabStop = false;
             this.grBoxStudent.Text = "Student";
@@ -262,7 +262,7 @@
             // 
             // btnStudDelete
             // 
-            this.btnStudDelete.Location = new System.Drawing.Point(6, 359);
+            this.btnStudDelete.Location = new System.Drawing.Point(6, 363);
             this.btnStudDelete.Name = "btnStudDelete";
             this.btnStudDelete.Size = new System.Drawing.Size(259, 23);
             this.btnStudDelete.TabIndex = 15;
@@ -367,7 +367,7 @@
             this.grBoxGroup.Controls.Add(this.txtGroupName);
             this.grBoxGroup.Location = new System.Drawing.Point(1121, 216);
             this.grBoxGroup.Name = "grBoxGroup";
-            this.grBoxGroup.Size = new System.Drawing.Size(230, 198);
+            this.grBoxGroup.Size = new System.Drawing.Size(271, 198);
             this.grBoxGroup.TabIndex = 27;
             this.grBoxGroup.TabStop = false;
             this.grBoxGroup.Text = "Group";
@@ -377,7 +377,7 @@
             // 
             this.btnGroupUpdate.Location = new System.Drawing.Point(6, 133);
             this.btnGroupUpdate.Name = "btnGroupUpdate";
-            this.btnGroupUpdate.Size = new System.Drawing.Size(212, 23);
+            this.btnGroupUpdate.Size = new System.Drawing.Size(259, 23);
             this.btnGroupUpdate.TabIndex = 26;
             this.btnGroupUpdate.Text = "Update Selected Row";
             this.btnGroupUpdate.UseVisualStyleBackColor = true;
@@ -405,14 +405,14 @@
             // 
             this.txtUpdGroupName.Location = new System.Drawing.Point(81, 107);
             this.txtUpdGroupName.Name = "txtUpdGroupName";
-            this.txtUpdGroupName.Size = new System.Drawing.Size(137, 20);
+            this.txtUpdGroupName.Size = new System.Drawing.Size(184, 20);
             this.txtUpdGroupName.TabIndex = 17;
             // 
             // btnGroupDelete
             // 
-            this.btnGroupDelete.Location = new System.Drawing.Point(6, 162);
+            this.btnGroupDelete.Location = new System.Drawing.Point(6, 169);
             this.btnGroupDelete.Name = "btnGroupDelete";
-            this.btnGroupDelete.Size = new System.Drawing.Size(212, 23);
+            this.btnGroupDelete.Size = new System.Drawing.Size(259, 23);
             this.btnGroupDelete.TabIndex = 15;
             this.btnGroupDelete.Text = "Delete Selected Row";
             this.btnGroupDelete.UseVisualStyleBackColor = true;
@@ -422,7 +422,7 @@
             // 
             this.btnGroupCreate.Location = new System.Drawing.Point(6, 55);
             this.btnGroupCreate.Name = "btnGroupCreate";
-            this.btnGroupCreate.Size = new System.Drawing.Size(212, 23);
+            this.btnGroupCreate.Size = new System.Drawing.Size(259, 23);
             this.btnGroupCreate.TabIndex = 9;
             this.btnGroupCreate.Text = "Insert New Record";
             this.btnGroupCreate.UseVisualStyleBackColor = true;
@@ -450,7 +450,7 @@
             // 
             this.txtGroupName.Location = new System.Drawing.Point(81, 29);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(137, 20);
+            this.txtGroupName.Size = new System.Drawing.Size(184, 20);
             this.txtGroupName.TabIndex = 0;
             // 
             // grBoxSubject
@@ -466,7 +466,7 @@
             this.grBoxSubject.Controls.Add(this.txtSubj);
             this.grBoxSubject.Location = new System.Drawing.Point(1121, 12);
             this.grBoxSubject.Name = "grBoxSubject";
-            this.grBoxSubject.Size = new System.Drawing.Size(230, 198);
+            this.grBoxSubject.Size = new System.Drawing.Size(271, 198);
             this.grBoxSubject.TabIndex = 28;
             this.grBoxSubject.TabStop = false;
             this.grBoxSubject.Text = "Subject";
@@ -476,7 +476,7 @@
             // 
             this.btnSubjUpdate.Location = new System.Drawing.Point(6, 133);
             this.btnSubjUpdate.Name = "btnSubjUpdate";
-            this.btnSubjUpdate.Size = new System.Drawing.Size(212, 23);
+            this.btnSubjUpdate.Size = new System.Drawing.Size(259, 23);
             this.btnSubjUpdate.TabIndex = 26;
             this.btnSubjUpdate.Text = "Update Selected Row";
             this.btnSubjUpdate.UseVisualStyleBackColor = true;
@@ -504,14 +504,14 @@
             // 
             this.txtUpdSubjName.Location = new System.Drawing.Point(81, 107);
             this.txtUpdSubjName.Name = "txtUpdSubjName";
-            this.txtUpdSubjName.Size = new System.Drawing.Size(137, 20);
+            this.txtUpdSubjName.Size = new System.Drawing.Size(184, 20);
             this.txtUpdSubjName.TabIndex = 17;
             // 
             // btnSubjDelete
             // 
             this.btnSubjDelete.Location = new System.Drawing.Point(6, 162);
             this.btnSubjDelete.Name = "btnSubjDelete";
-            this.btnSubjDelete.Size = new System.Drawing.Size(212, 23);
+            this.btnSubjDelete.Size = new System.Drawing.Size(259, 23);
             this.btnSubjDelete.TabIndex = 15;
             this.btnSubjDelete.Text = "Delete Selected Row";
             this.btnSubjDelete.UseVisualStyleBackColor = true;
@@ -521,7 +521,7 @@
             // 
             this.btnSubjCreate.Location = new System.Drawing.Point(6, 55);
             this.btnSubjCreate.Name = "btnSubjCreate";
-            this.btnSubjCreate.Size = new System.Drawing.Size(212, 23);
+            this.btnSubjCreate.Size = new System.Drawing.Size(259, 23);
             this.btnSubjCreate.TabIndex = 9;
             this.btnSubjCreate.Text = "Insert New Record";
             this.btnSubjCreate.UseVisualStyleBackColor = true;
@@ -549,7 +549,7 @@
             // 
             this.txtSubj.Location = new System.Drawing.Point(81, 29);
             this.txtSubj.Name = "txtSubj";
-            this.txtSubj.Size = new System.Drawing.Size(137, 20);
+            this.txtSubj.Size = new System.Drawing.Size(184, 20);
             this.txtSubj.TabIndex = 0;
             // 
             // grBoxGTS
@@ -575,6 +575,42 @@
             this.grBoxGTS.Text = "GroupToSubject";
             this.grBoxGTS.Visible = false;
             // 
+            // comboGTSUpdSubj
+            // 
+            this.comboGTSUpdSubj.FormattingEnabled = true;
+            this.comboGTSUpdSubj.Location = new System.Drawing.Point(81, 169);
+            this.comboGTSUpdSubj.Name = "comboGTSUpdSubj";
+            this.comboGTSUpdSubj.Size = new System.Drawing.Size(184, 21);
+            this.comboGTSUpdSubj.TabIndex = 30;
+            this.comboGTSUpdSubj.Visible = false;
+            // 
+            // lblGTSUpdSubj
+            // 
+            this.lblGTSUpdSubj.AutoSize = true;
+            this.lblGTSUpdSubj.Location = new System.Drawing.Point(36, 172);
+            this.lblGTSUpdSubj.Name = "lblGTSUpdSubj";
+            this.lblGTSUpdSubj.Size = new System.Drawing.Size(46, 13);
+            this.lblGTSUpdSubj.TabIndex = 29;
+            this.lblGTSUpdSubj.Text = "Subject:";
+            this.lblGTSUpdSubj.Visible = false;
+            // 
+            // comboGTSSubj
+            // 
+            this.comboGTSSubj.FormattingEnabled = true;
+            this.comboGTSSubj.Location = new System.Drawing.Point(81, 64);
+            this.comboGTSSubj.Name = "comboGTSSubj";
+            this.comboGTSSubj.Size = new System.Drawing.Size(184, 21);
+            this.comboGTSSubj.TabIndex = 28;
+            // 
+            // lblGTSSubj
+            // 
+            this.lblGTSSubj.AutoSize = true;
+            this.lblGTSSubj.Location = new System.Drawing.Point(36, 67);
+            this.lblGTSSubj.Name = "lblGTSSubj";
+            this.lblGTSSubj.Size = new System.Drawing.Size(46, 13);
+            this.lblGTSSubj.TabIndex = 27;
+            this.lblGTSSubj.Text = "Subject:";
+            // 
             // btnGTSUpdate
             // 
             this.btnGTSUpdate.Location = new System.Drawing.Point(6, 196);
@@ -583,6 +619,7 @@
             this.btnGTSUpdate.TabIndex = 26;
             this.btnGTSUpdate.Text = "Update Selected Row";
             this.btnGTSUpdate.UseVisualStyleBackColor = true;
+            this.btnGTSUpdate.Visible = false;
             this.btnGTSUpdate.Click += new System.EventHandler(this.btnGTSUpdate_Click);
             // 
             // label3
@@ -593,6 +630,7 @@
             this.label3.Size = new System.Drawing.Size(112, 13);
             this.label3.TabIndex = 25;
             this.label3.Text = "Update Selected Row";
+            this.label3.Visible = false;
             // 
             // comboGTSUpdGroup
             // 
@@ -601,6 +639,7 @@
             this.comboGTSUpdGroup.Name = "comboGTSUpdGroup";
             this.comboGTSUpdGroup.Size = new System.Drawing.Size(184, 21);
             this.comboGTSUpdGroup.TabIndex = 24;
+            this.comboGTSUpdGroup.Visible = false;
             // 
             // lblGTSUpdGroup
             // 
@@ -610,10 +649,11 @@
             this.lblGTSUpdGroup.Size = new System.Drawing.Size(39, 13);
             this.lblGTSUpdGroup.TabIndex = 21;
             this.lblGTSUpdGroup.Text = "Group:";
+            this.lblGTSUpdGroup.Visible = false;
             // 
             // btnGTSDelete
             // 
-            this.btnGTSDelete.Location = new System.Drawing.Point(6, 225);
+            this.btnGTSDelete.Location = new System.Drawing.Point(6, 228);
             this.btnGTSDelete.Name = "btnGTSDelete";
             this.btnGTSDelete.Size = new System.Drawing.Size(259, 23);
             this.btnGTSDelete.TabIndex = 15;
@@ -657,45 +697,11 @@
             this.lblGTSGroup.TabIndex = 4;
             this.lblGTSGroup.Text = "Group:";
             // 
-            // comboGTSSubj
-            // 
-            this.comboGTSSubj.FormattingEnabled = true;
-            this.comboGTSSubj.Location = new System.Drawing.Point(81, 64);
-            this.comboGTSSubj.Name = "comboGTSSubj";
-            this.comboGTSSubj.Size = new System.Drawing.Size(184, 21);
-            this.comboGTSSubj.TabIndex = 28;
-            // 
-            // lblGTSSubj
-            // 
-            this.lblGTSSubj.AutoSize = true;
-            this.lblGTSSubj.Location = new System.Drawing.Point(36, 67);
-            this.lblGTSSubj.Name = "lblGTSSubj";
-            this.lblGTSSubj.Size = new System.Drawing.Size(46, 13);
-            this.lblGTSSubj.TabIndex = 27;
-            this.lblGTSSubj.Text = "Subject:";
-            // 
-            // comboGTSUpdSubj
-            // 
-            this.comboGTSUpdSubj.FormattingEnabled = true;
-            this.comboGTSUpdSubj.Location = new System.Drawing.Point(81, 169);
-            this.comboGTSUpdSubj.Name = "comboGTSUpdSubj";
-            this.comboGTSUpdSubj.Size = new System.Drawing.Size(184, 21);
-            this.comboGTSUpdSubj.TabIndex = 30;
-            // 
-            // lblGTSUpdSubj
-            // 
-            this.lblGTSUpdSubj.AutoSize = true;
-            this.lblGTSUpdSubj.Location = new System.Drawing.Point(36, 172);
-            this.lblGTSUpdSubj.Name = "lblGTSUpdSubj";
-            this.lblGTSUpdSubj.Size = new System.Drawing.Size(46, 13);
-            this.lblGTSUpdSubj.TabIndex = 29;
-            this.lblGTSUpdSubj.Text = "Subject:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1389, 475);
+            this.ClientSize = new System.Drawing.Size(1407, 475);
             this.Controls.Add(this.grBoxGTS);
             this.Controls.Add(this.grBoxSubject);
             this.Controls.Add(this.grBoxGroup);

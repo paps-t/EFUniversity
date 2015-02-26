@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F99239B6-BA66-455E-9EAF-78B757FB483A}</ProjectGuid>
+    <ProjectGuid>{C386ADF0-8F72-4960-9274-3E8FE888290F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DBModel</RootNamespace>
-    <AssemblyName>DBModel</AssemblyName>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,16 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\DTOGroup.cs" />
-    <Compile Include="DTO\DTOGroupToSubject.cs" />
-    <Compile Include="DTO\DTOStudent.cs" />
-    <Compile Include="DTO\DTOSubject.cs" />
-    <Compile Include="GroupToSubject.cs" />
-    <Compile Include="Subject.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Group.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Implementations\BaseManager.cs" />
+    <Compile Include="Implementations\GroupManager.cs" />
+    <Compile Include="Implementations\StudentManager.cs" />
+    <Compile Include="Interfaces\IGroupManager.cs" />
+    <Compile Include="Interfaces\IStudentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

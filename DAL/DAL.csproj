@@ -56,6 +56,7 @@
       <DependentUpon>201502241728294_AllTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repo\GenericRepository.cs" />
     <Compile Include="StudentRepository.cs" />
     <Compile Include="UniversityContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
