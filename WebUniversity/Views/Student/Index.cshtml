@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DBModel.Student>
+
+<h1>Students</h1>
+<div>
+    <ul>
+
+        @foreach (var student in Model)
+        {
+            <li>
+                <span>@student.FirstName</span>
+                <span>@student.LastName</span>
+                <span>@student.Age</span>
+                <span>@student.GroupId</span>
+            </li>
+        }
+    </ul>
+    @Html.ActionLink("New", "AddStudent")
+</div>

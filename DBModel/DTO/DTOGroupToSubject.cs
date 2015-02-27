@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBModel.DTO
 {
-    class DTOGroupToSubject
+    public class DTOGroupToSubject
     {
         public int GroupId { get; set; }
         public string Group { get; set; }
