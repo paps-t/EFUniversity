@@ -46,7 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GroupRepository.cs" />
+    <Compile Include="GroupToSubjectRepository.cs" />
+    <Compile Include="IGroupRepository.cs" />
+    <Compile Include="IGroupToSubjectRepository.cs" />
     <Compile Include="IStudentRepository.cs" />
+    <Compile Include="ISubjectRepository.cs" />
     <Compile Include="Migrations\201502241725148_Groups.cs" />
     <Compile Include="Migrations\201502241725148_Groups.Designer.cs">
       <DependentUpon>201502241725148_Groups.cs</DependentUpon>
@@ -58,6 +63,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repo\GenericRepository.cs" />
     <Compile Include="StudentRepository.cs" />
+    <Compile Include="SubjectRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
     <Compile Include="UniversityContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,7 +8,9 @@ namespace DBModel.DTO
 {
     class DTOGroupToSubject
     {
+        public int GroupId { get; set; }
         public string Group { get; set; }
+        public int SubjectId { get; set; }
         public string Subject { get; set; }
     }
 }

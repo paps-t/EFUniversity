@@ -1,4 +1,5 @@
 ﻿using DBModel;
+using DBModel.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

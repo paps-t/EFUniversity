@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DBModel.Group>
+
+<div>
+    <h1>Groups</h1>
+    <div>
+        <ul>
+            @foreach (var group in Model)
+            {
+                <li>
+                    <span>@group.Name</span>
+                    <input type="hidden" value="@group.Id" />
+                </li>
+            }
+        </ul>
+    </div>
+</div>
