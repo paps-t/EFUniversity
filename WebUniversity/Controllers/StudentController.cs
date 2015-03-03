@@ -15,9 +15,10 @@ namespace WebUniversity.Controllers
     {
         public IStudentManager mngr;
 
-        public StudentController()
+        public StudentController(IStudentManager mngr)
         {
-            mngr = new StudentManager(new UnitOfWork());
+            this.mngr = mngr;
+            //mngr = new StudentManager(new UnitOfWork());
         }
 
         //
@@ -26,6 +27,13 @@ namespace WebUniversity.Controllers
         {
             var students = mngr.GetStudents();
             return View(students);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var groups = mngr.GetStudentById(id);
+            mngr.DeleteStudent(groups);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

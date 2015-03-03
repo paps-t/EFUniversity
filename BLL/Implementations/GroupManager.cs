@@ -25,5 +25,17 @@ namespace BLL.Implementations
         {
             return uof.GroupRepository.All.ToList();
         }
+
+        public Group GetGroupById(int groupId)
+        {
+            return uof.GroupRepository.GetByID(groupId);
+        }
+
+        public void DeleteGroup(Group group)
+        {
+            uof.GroupRepository.Delete(group);
+            uof.Save();
+        }
+
     }
 }

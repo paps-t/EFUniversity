@@ -41,8 +41,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Implementations\BaseManager.cs" />
+    <Compile Include="Implementations\SubjectManager.cs" />
     <Compile Include="Implementations\GroupManager.cs" />
     <Compile Include="Implementations\StudentManager.cs" />
+    <Compile Include="Interfaces\ISubjectManager.cs" />
     <Compile Include="Interfaces\IGroupManager.cs" />
     <Compile Include="Interfaces\IStudentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

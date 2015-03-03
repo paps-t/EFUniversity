@@ -6,11 +6,13 @@
         <ul>
             @foreach (var group in Model)
             {
-                <li>
-                    <span>@group.Name</span>
+                <li style="width: 100%">
+                    <span style="width:50%">@group.Name</span>
+                    <div style="float:right">@Html.ActionLink("Delete", "Delete", new { id=@group.Id })</div>
                     <input type="hidden" value="@group.Id" />
                 </li>
             }
         </ul>
     </div>
+    @Html.ActionLink("New", "AddGroup")
 </div>

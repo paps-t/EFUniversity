@@ -11,6 +11,7 @@
                 <span>@student.LastName</span>
                 <span>@student.Age</span>
                 <span>@student.GroupId</span>
+                <div style="float:right">@Html.ActionLink("Delete", "Delete", new { id = @student.Id })</div>
             </li>
         }
     </ul>

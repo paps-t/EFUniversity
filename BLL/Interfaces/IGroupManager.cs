@@ -11,5 +11,7 @@ namespace BLL.Interfaces
     {
         Group AddGroup(Group group);
         IEnumerable<Group> GetGroups();
+        Group GetGroupById(int groupId);
+        void DeleteGroup(Group group);
     }
 }

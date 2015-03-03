@@ -14,9 +14,10 @@ namespace WebUniversity.Controllers
     {
         public IGroupManager mngr;
         //
-        public GroupController()
+        public GroupController(IGroupManager mngr)
         {
-            mngr = new GroupManager(new UnitOfWork());
+            this.mngr = mngr;
+            //mngr = new GroupManager(new UnitOfWork());
         }
 
         // GET: /Group/
@@ -24,6 +25,13 @@ namespace WebUniversity.Controllers
         {
             var groups = mngr.GetGroups();
             return View(groups);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var group = mngr.GetGroupById(id);
+            mngr.DeleteGroup(group);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -38,5 +46,19 @@ namespace WebUniversity.Controllers
             mngr.AddGroup(group);
             return RedirectToAction("Index");
         }
-	}
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var group = mngr.GetGroupById(id);
+            return View(group);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Group group)
+        {
+            //var group = mngr.GetGroupById(id);
+            return RedirectToAction("Index");
+        }
+    }
 }
