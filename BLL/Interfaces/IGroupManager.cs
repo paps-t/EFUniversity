@@ -13,5 +13,6 @@ namespace BLL.Interfaces
         IEnumerable<Group> GetGroups();
         Group GetGroupById(int groupId);
         void DeleteGroup(Group group);
+        void EditGroup(Group group);
     }
 }

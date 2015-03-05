@@ -14,5 +14,15 @@ namespace WebUniversity.Models
         public int Age { get; set; }
         public int GroupId { get; set; }
         public IEnumerable<Group> Groups { get; set; }
+
+        public StudentModelView() { }
+        public StudentModelView(Student student)
+        {
+            Id = student.Id;
+            FirstName = student.FirstName;
+            LastName = student.LastName;
+            Age = student.Age;
+            GroupId = student.GroupId;
+        }
     }
 }

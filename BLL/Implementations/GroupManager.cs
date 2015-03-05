@@ -23,7 +23,12 @@ namespace BLL.Implementations
 
         public IEnumerable<Group> GetGroups()
         {
-            return uof.GroupRepository.All.ToList();
+            try
+            {
+                return uof.GroupRepository.All.ToList();
+            }
+            catch (Exception) { }
+            return null;
         }
 
         public Group GetGroupById(int groupId)
@@ -37,5 +42,10 @@ namespace BLL.Implementations
             uof.Save();
         }
 
+        public void EditGroup(Group group)
+        {
+            uof.GroupRepository.Update(group);
+            uof.Save();
+        }
     }
 }

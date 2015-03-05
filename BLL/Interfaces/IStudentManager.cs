@@ -13,5 +13,6 @@ namespace BLL.Interfaces
         IEnumerable<Student> GetStudents();
         Student GetStudentById(int studentId);
         void DeleteStudent(Student student);
+        void EditStudent(Student student);
     }
 }

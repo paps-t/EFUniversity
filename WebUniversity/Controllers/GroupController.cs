@@ -58,6 +58,7 @@ namespace WebUniversity.Controllers
         public ActionResult Edit(Group group)
         {
             //var group = mngr.GetGroupById(id);
+            mngr.EditGroup(group);
             return RedirectToAction("Index");
         }
     }

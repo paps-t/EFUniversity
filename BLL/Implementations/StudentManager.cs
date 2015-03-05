@@ -22,7 +22,12 @@ namespace BLL.Implementations
 
         public IEnumerable<Student> GetStudents()
         {
-            return uof.StudentRepository.All.ToList();
+            try
+            {
+                return uof.StudentRepository.All.ToList();
+            }
+            catch(Exception){ }
+            return null;
         }
 
         public Student GetStudentById(int studentId)
@@ -36,5 +41,10 @@ namespace BLL.Implementations
             uof.Save();
         }
 
+        public void EditStudent(Student student)
+        {
+            uof.StudentRepository.Update(student);
+            uof.Save();
+        }
     }
 }

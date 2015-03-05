@@ -1,19 +1,117 @@
-﻿@model IEnumerable<DBModel.Student>
+﻿@model WebUniversity.Models.GroupStudents
 
 <h1>Students</h1>
-<div>
-    <ul>
-
-        @foreach (var student in Model)
+<div class="items">
+    <ul class="list">
+        @if (Model != null)
         {
-            <li>
-                <span>@student.FirstName</span>
-                <span>@student.LastName</span>
-                <span>@student.Age</span>
-                <span>@student.GroupId</span>
-                <div style="float:right">@Html.ActionLink("Delete", "Delete", new { id = @student.Id })</div>
-            </li>
+            foreach (var student in Model.Students)
+            {
+                <li>
+                    <span>@student.FirstName</span>
+                    <span>@student.LastName</span>
+                    <span>@student.Age</span>
+                    <span>@student.GroupId</span>
+                    <div style="float: right">
+                        <span>@Html.ActionLink("Edit", "Edit", new { id = @student.Id })</span>
+                        &nbsp;
+                        <span>@Html.ActionLink("Delete", "Delete", new { id = @student.Id })</span>
+                    </div>
+                    <div style="clear: both"></div>
+                </li>
+            }
         }
     </ul>
-    @Html.ActionLink("New", "AddStudent")
+    <uul style="visibility: hidden;">
+        <li>
+            <input class="text-box single-line" id="FirstName" name="FirstName" type="text" value="" />
+            <input class="text-box single-line" id="LastName" name="LastName" type="text" value="" />
+            <input class="text-box single-line" data-val="true" data-val-number="The field Age must be a number." data-val-required="The Age field is required." id="Age" name="Age" type="number" value="0" />
+            <select id="GroupId" name="GroupId">
+                @foreach (var group in Model.Groups)
+                {
+                    <option value="@group.Id">@group.Name</option>
+                }
+            </select>
+            <input type="button" value="Create" class="btn btn-default btn-add" />
+        </li>
+    </uul>
+<input type="button" value="New student" id="New" />
+@Html.ActionLink("New", "Add")
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#New").click(function () {
+            console.log($("uul").is("visible"));
+            if ($("uul").css('visibility') != 'visible') {
+                $("uul").css('visibility', 'visible');
+                console.log($("uul").css('visibility'));
+            }
+//            if ($(".add-form").length == 0) {
+//                $(".items ul").append(liItem());
+//            }
+        });
+
+        $(".btn-add").click(function () {
+            console.log("sdgf");
+            $.ajax({
+                type: "POST",
+                url: "/Student/AjaxAdd",
+                data: { FirstName: $("#FirstName").val(), LastName: $("#LastName").val(), Age: $("#Age").val(), GroupId: $("#GroupId").val() }
+            }).done(function (data) {
+                $(".items .list").empty();
+                $.each(data, function (i, item) {
+                    var li = $('<li>').append(
+                        $('<span>').text(item.FirstName), "\n\r",
+                        $('<span>').text(item.LastName), "\n\r",
+                        $('<span>').text(item.Age), "\n\r",
+                        $('<span>').text(item.GroupId), "\n\r",
+                        $('<div style="float: right">').html('<a href="/Student/Edit/' + item.Id + '">Edit</a> | ' +
+                        '<a href="/Student/Delete/' + item.Id + '">Delete</a>')
+                    );
+                    console.log("fuq!!");
+                    $('.items ul').append(li);
+                });
+            });
+        });
+    });
+
+    function liItem() {
+        var string = "<li class=\"add-form\">";
+        string += '<form>';
+        string += '<input class="text-box single-line" id="FirstName" name="FirstName" type="text" value="" />';
+        string += '<input class="text-box single-line" id="LastName" name="LastName" type="text" value="" />';
+        string += '<input class="text-box single-line" data-val="true" data-val-number="The field Age must be a number." data-val-required="The Age field is required." id="Age" name="Age" type="number" value="0" />';
+        string += '<select id="GroupId" name="GroupId">';
+        string += '<option value="3">101</option>                        ';
+        string += '<option value="4">102</option>                        ';
+        string += '<option value="5">502M</option>                        ';
+        string += '<option value="6">501C</option>                        ';
+        string += '</select>';
+        string += '<div style="float: right">';
+        string += '<input type="button" value="Create" class="btn btn-default btn-add"/>';
+        string += '</div>';
+        string += '</form></li>';
+
+        return string;
+    }
+
+    function li() {
+        var string = "<li>";
+        string += "<span>firstName</span>";
+        string += "<span>lastName</span>";
+        string += "<span>age</span>";
+        string += "<span>student.GroupId</span>";
+        string += '<div style="float: right">';
+        string += "<span></span>";
+        string += "&nbsp;";
+        string += "<span></span>";
+        string += "</div>";
+
+        string += '</li>';
+        return string;
+        var rec = $('<li>');
+    }
+
+
+</script>

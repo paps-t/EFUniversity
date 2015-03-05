@@ -8,7 +8,12 @@
             {
                 <li style="width: 100%">
                     <span style="width:50%">@group.Name</span>
-                    <div style="float:right">@Html.ActionLink("Delete", "Delete", new { id=@group.Id })</div>
+                    <div style="float: right">
+                        <span>@Html.ActionLink("Edit", "Edit", new { id = @group.Id })</span>
+                        &nbsp;
+                        <span>@Html.ActionLink("Delete", "Delete", new { id = @group.Id })</span>
+                    </div>
+                    <div style="clear: both"></div>
                     <input type="hidden" value="@group.Id" />
                 </li>
             }

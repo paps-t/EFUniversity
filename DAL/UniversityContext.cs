@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DBModel;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace DAL
 {
@@ -18,6 +19,12 @@ namespace DAL
         public UniversityContext()
             : base("EFUniversity")
         {
+            this.Configuration.LazyLoadingEnabled = true;
         }
+        /*
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        }*/
     }
 }
