@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.formattedList .oddItem {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.formattedList .evenItem {
+    background-color: White;
+    color: Black;
+}
+
+

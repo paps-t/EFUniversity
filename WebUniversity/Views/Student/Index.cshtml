@@ -2,7 +2,7 @@
 
 <h1>Students</h1>
 <div class="items">
-    <ul class="list">
+    <ul class="list formattedList">
         @if (Model != null)
         {
             foreach (var student in Model.Students)
@@ -41,15 +41,14 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
+        $("ul.formattedList li:odd").addClass("oddItem");
+        $("ul.formattedList li:even").addClass("evenItem");
         $("#New").click(function () {
             console.log($("uul").is("visible"));
             if ($("uul").css('visibility') != 'visible') {
                 $("uul").css('visibility', 'visible');
                 console.log($("uul").css('visibility'));
             }
-//            if ($(".add-form").length == 0) {
-//                $(".items ul").append(liItem());
-//            }
         });
 
         $(".btn-add").click(function () {

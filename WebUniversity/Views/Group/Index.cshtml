@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<DBModel.Group>
 
-<div>
+<div class="items">
     <h1>Groups</h1>
-    <div>
-        <ul>
+        <ul class="list formattedList">
             @foreach (var group in Model)
             {
                 <li style="width: 100%">
@@ -18,6 +17,44 @@
                 </li>
             }
         </ul>
-    </div>
-    @Html.ActionLink("New", "AddGroup")
-</div>
+    <uul style="visibility: hidden;">
+        <li>werty</li>
+    </uul>
+    <input type="button" value="New group" id="New" />
+    @Html.ActionLink("New", "Add")</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("ul.formattedList li:odd").addClass("oddItem");
+        $("ul.formattedList li:even").addClass("evenItem");
+        /*$("#New").click(function () {
+            console.log($("uul").is("visible"));
+            if ($("uul").css('visibility') != 'visible') {
+                $("uul").css('visibility', 'visible');
+                console.log($("uul").css('visibility'));
+            }
+        });
+
+        /*$(".btn-add").click(function () {
+            console.log("sdgf");
+            $.ajax({
+                type: "POST",
+                url: "/Group/AjaxAdd",
+                data: { FirstName: $("#FirstName").val(), LastName: $("#LastName").val(), Age: $("#Age").val(), GroupId: $("#GroupId").val() }
+            }).done(function (data) {
+                $(".items .list").empty();
+                $.each(data, function (i, item) {
+                    var li = $('<li>').append(
+                        $('<span>').text(item.FirstName), "\n\r",
+                        $('<span>').text(item.LastName), "\n\r",
+                        $('<span>').text(item.Age), "\n\r",
+                        $('<span>').text(item.GroupId), "\n\r",
+                        $('<div style="float: right">').html('<a href="/Student/Edit/' + item.Id + '">Edit</a> | ' +
+                        '<a href="/Student/Delete/' + item.Id + '">Delete</a>')
+                    );
+                    console.log("fuq!!");
+                    $('.items ul').append(li);
+                });
+            });
+        });*/
+    });
+</script>

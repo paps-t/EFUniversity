@@ -30,6 +30,7 @@ namespace WebUniversity.Controllers
             GroupStudents grStudents = new GroupStudents();
             grStudents.Students = mngr.GetStudents();
             grStudents.Groups = grMngr.GetGroups();
+            grMngr.GetGroups().Last();
             var students = mngr.GetStudents();
             return View(grStudents);
         }

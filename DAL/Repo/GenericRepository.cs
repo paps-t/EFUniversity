@@ -85,17 +85,5 @@ namespace DAL.Repo
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
         }
-
-
-        class A { }
-        class A1 : A { }
-        class B
-        {
-            public virtual A f() { return new A(); }
-        }
-        class B1 : B
-        {
-            public override A1 f() { return new A1(); }
-        }
     }
 }

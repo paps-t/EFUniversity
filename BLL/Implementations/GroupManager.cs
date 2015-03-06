@@ -20,7 +20,6 @@ namespace BLL.Implementations
             return group;
         }
 
-
         public IEnumerable<Group> GetGroups()
         {
             try
