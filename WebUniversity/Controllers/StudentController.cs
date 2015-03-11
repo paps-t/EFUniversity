@@ -49,7 +49,7 @@ namespace WebUniversity.Controllers
             var student = mngr.GetStudentById(id);
             var studModel = new StudentModelView(student);
             studModel.Groups = groupsMngr.GetGroups();
-            return View(student);
+            return View(studModel);
         }
 
         [HttpPost]
