@@ -88,6 +88,14 @@
     <Compile Include="Migrations\201502241728294_AllTables.Designer.cs">
       <DependentUpon>201502241728294_AllTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503121356172_Auth.cs" />
+    <Compile Include="Migrations\201503121356172_Auth.Designer.cs">
+      <DependentUpon>201503121356172_Auth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503121621413_Auth1.cs" />
+    <Compile Include="Migrations\201503121621413_Auth1.Designer.cs">
+      <DependentUpon>201503121621413_Auth1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repo\GenericRepository.cs" />
     <Compile Include="StudentRepository.cs" />
@@ -112,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502241728294_AllTables.resx">
       <DependentUpon>201502241728294_AllTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503121356172_Auth.resx">
+      <DependentUpon>201503121356172_Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503121621413_Auth1.resx">
+      <DependentUpon>201503121621413_Auth1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
