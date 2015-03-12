@@ -62,7 +62,7 @@ namespace WebApiClient.Controllers
             {
                 students = context.Students.AsEnumerable<Student>();
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 //this.ActionContext.Response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -79,7 +79,7 @@ namespace WebApiClient.Controllers
                 context = null;
                 student = context.Students.FirstOrDefault<Student>(std => std.Id == id);
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 //this.ActionContext.Response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -105,7 +105,7 @@ namespace WebApiClient.Controllers
                 context.Students.Remove(student);
                 context.SaveChanges();
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 //this.ActionContext.Response.StatusCode = HttpStatusCode.InternalServerError;
                 return false;
